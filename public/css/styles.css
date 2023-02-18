@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+
+body {
+    background-color: black;
+    color: orange;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/*Start of Nav Bar Styles Here*/
+nav header {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+nav header img {
+    width: 200px;
+}
+
+nav header i {
+    margin: 5px 0 0 0;
+    font-size: 30px;
+}
+
+.hide {
+    position: absolute;
+    top: 40px;
+    font-size: 30px;
+    background-color: rgba(12, 11, 11, 0.856);
+    width: 90vw;
+    height: 80vh;
+    margin: 20px 0 0 -900px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    transition-duration: 0.5s;
+}
+
+#list-icons {
+    color: orange;
+}
+
+.show {
+    position: absolute;
+    top: 40px;
+    font-size: 30px;
+    background-color: rgba(12, 11, 11, 0.856);
+    width: 90vw;
+    height: 80vh;
+    margin: 20px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    transition-duration: 0.5s;
+}
+
+.show li {
+    margin: 50px;
+}
+
+.hide li {
+    margin: 60px;
+}
+
+.show li:hover {
+    transform: scale(1.1);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    margin: auto;
+    background-color: orange;
+    margin: 20px 0;
+  }
+
+@media screen and (min-width: 500px) {
+
+    .show {
+        margin: 20px 0 0 0;
+        width: 100vw;
+    }
+
+    .show li {
+        margin: 50px 50px 50px 200px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav header {
+        gap: 10px;
+    }
+
+    nav header .bi-list {
+        display: none;
+    }
+
+    .hide {
+        position: relative;
+        top: -50px;
+        margin: 0;
+        font-size: 20px;
+        width: 0;
+        height: 0;
+        display: flex;
+        justify-content: right;
+    }
+
+    li {
+        display: flex;
+        gap: 10px;
+        transition: all 0.5s;
+    }
+
+    li:hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+}
+
+/*End of Nav Bar Styles Here*/
+
+/*Start of Home page Styles*/
+
+main header {
+    margin: 50px 20px 20px 20px;
+    height: 90vh;
+}
+
+main header h1 {
+    margin: 0 0 20px 0;
+}
+
+main header a {
+    margin: 0 0 0 100px;
+    border: 2px solid orange;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: black;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+main img {
+    width: 100%;
+}
+
+main .div-one {
+    margin: 20px;
+}
+
+main .div-two {
+    margin: 20px;
+}
+
+main .div-three {
+    margin: 20px;
+}
+
+main .div-four {
+    margin: 30px;
+    padding: 5px;
+}
+
+main .div-four h1 {
+    margin: 0 0 20px 0;
+}
+
+
+main .div-four a {
+    margin: 0 0 0 100px;
+    border: 2px solid orange;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: black;
+}
+
+@media screen and (min-width: 500px) {
+
+    main header {
+        margin: 10px 0 0 0;
+        height: 90vh;
+    }
+
+    main header h1 {
+        text-align: center;
+    }
+
+    main header a {
+        margin: 0 0 0 200px;
+    }
+
+    main .div-four a {
+        margin: 0 0 0 180px;
+    }
+
+    main header h2 {
+        text-align: center;
+    }
+
+    main img {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    main img {
+        width: 60%;
+        margin: 0 0 0 100px;
+    }
+
+    main header a {
+        margin: 0 0 0 300px;
+    }
+
+    main .div-four a {
+        margin: 0 0 0 280px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main header h2 {
+        font-size: 40px;
+    }
+
+    main header div {
+        display: flex;
+        margin: 40px 0 0 0;
+    }
+
+    main header div h1 {
+        margin: 70px 0 0 0;
+    }
+
+    main header img {
+        width: 60%;
+        margin: 10px;
+    }
+
+    main header a {
+        margin: auto;
+    }
+
+    .div-one {
+        margin: 40px 0 40px 0;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .div-one img {
+        width: 50%;
+    }
+
+    .div-one h1 {
+        font-size: 30px;
+    }
+
+    .div-two {
+        margin: 40px 0 40px 0;
+        display: flex;
+    }
+
+    .div-two img {
+        width: 50%;
+    }
+
+    .div-two h1 {
+        font-size: 30px;
+    }
+
+    .div-three {
+        margin: 50px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .div-three img {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main header img {
+        width: 50%;
+        margin: 0;
+    }
+
+    main header h1 {
+        font-size: 40px;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+/*End of Home page Styles*/
+
+/* Start Of Footer styles */
+footer {
+    margin: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* End Of Footer styles */
