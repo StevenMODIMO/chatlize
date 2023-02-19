@@ -8,7 +8,7 @@
 
 body {
     background-color: black;
-    color: orange;
+    color: rgb(221, 158, 42);
 }
 
 a {
@@ -22,6 +22,7 @@ ul {
 
 
 /*Start of Nav Bar Styles Here*/
+
 nav header {
     display: flex;
     justify-content: space-between;
@@ -166,7 +167,7 @@ main h1 {
 }
 
 main img {
-    width: 100%;
+    width: 90%;
 }
 
 main .div-one {
@@ -305,22 +306,105 @@ main .div-four a {
         flex-direction: row-reverse;
     }
 
+    .div-three h1 {
+        font-size: 25px;
+    }
+
     .div-three img {
         width: 50%;
+    }
+
+    .div-four h1 {
+        font-size: 25px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    main header img {
-        width: 50%;
-        margin: 0;
+
+    main header h2 {
+        text-decoration: underline;
     }
 
-    main header h1 {
+    main header div img {
+        width: 40%;
+        margin: 0 0 0 50px;
+    }
+
+    main header div {
+        margin: 80px 0 0 0;
+    }
+
+    main header div h1 {
+        width: 60%;
+        margin:  50px;
+        height: 200px;
+        box-shadow: inset 0.5px 0.5px 1px orange;
         font-size: 40px;
     }
 
     hr {
+        display: none;
+    }
+
+    section {
+        width: 90vw;
+        display: grid;
+        grid-template-columns: repeat(4, 300px);
+        grid-gap: 20px;
+        justify-content: center;
+    }
+
+    .div-one {
+        width: 100%;
+        border: 2px solid orange;
+        flex-direction: column;
+        gap: 30px;
+        box-shadow: 2px 2px 3px orange;
+    }
+
+    .div-one img {
+        margin: 30px 0 0 90px;
+    }
+
+
+    .div-two {
+        width: 100%;
+        border: 2px solid orange;
+        flex-direction: column;
+        gap: 30px;
+        box-shadow: 2px 2px 3px orange;
+    }
+
+    .div-two img {
+        margin: 30px 0 0 90px;
+    }
+
+    .div-three {
+        width: 100%;
+        border: 2px solid orange;
+        flex-direction: column;
+        gap: 30px;
+        box-shadow: 2px 2px 3px orange;
+    }
+
+    .div-three img {
+        margin: 50px 0 0 50px;
+        width: 70%;
+    }
+
+    .div-four {
+        width: 100%;
+        border: 2px solid orange;
+        flex-direction: column;
+        gap: 30px;
+        box-shadow: 2px 2px 3px orange;
+    }
+
+    .div-four img {
+        margin: 30px 0 0 90px;        
+    }
+
+    .div-four a {
         display: none;
     }
 }
@@ -335,3 +419,23 @@ footer {
 }
 
 /* End Of Footer styles */
+
+/* Start of Login Page Styles */
+
+.login-div {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-div a {
+    width: 90%;
+    border: 2px solid orange;
+    padding: 5px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+/* End of Login Page Styles */

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="images/LC.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/LC.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <link
       rel="stylesheet"
@@ -21,38 +21,43 @@
       <ul class="hide">
         <% if (user) { %>
         <li>
-            <i class="bi bi-box-arrow-left"></i>
-          <a href="/auth/logout">Log out</a>
+          <i class="bi bi-box-arrow-left"></i>
+          <a href="/logout">Log out</a>
         </li>
         <% } else { %>
         <li>
           <i class="bi bi-box-arrow-in-right"></i>
-          <a href="/auth/login">Login</a>
+          <a href="login">Login</a>
         </li>
         <% } %>
         <li>
-            <i class="bi bi-house"></i>
-            <a href="/">Home</a></li>
+          <i class="bi bi-house"></i>
+          <a href="/">Home</a>
+        </li>
         <li>
-            <i class="bi bi-person-circle"></i>
-            <a href="/profile">User</a></li>
+          <i class="bi bi-person-circle"></i>
+          <a href="/profile">User</a>
+        </li>
       </ul>
     </nav>
-    <h1>Login Page</h1>
-    <header>
-      <a href="/auth/google">Google+</a>
-    </header>
+
+    <div class="login-div">
+      <a href="/google"><i class="bi bi-google"></i> Continue With Google</a>
+      <a href="#"><i class="bi bi-twitter"></i> Continue With Twitter</a>
+      <a href="#"><i class="bi bi-github"></i> Continue With Github</a>
+      <a href="#"><i class="bi bi-facebook"></i> Continue With Facebook</a>
+    </div>
 
     <script>
       const menu = document.getElementById("menu-bar");
       const ul = document.querySelector("ul");
       menu.addEventListener("click", () => {
-        if(ul.classList.contains("hide")) {
-            ul.classList.remove("hide")
-            ul.classList.add("show")
+        if (ul.classList.contains("hide")) {
+          ul.classList.remove("hide");
+          ul.classList.add("show");
         } else {
-            ul.classList.remove("show")
-            ul.classList.add("hide")
+          ul.classList.remove("show");
+          ul.classList.add("hide");
         }
       });
     </script>

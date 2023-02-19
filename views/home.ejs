@@ -25,12 +25,12 @@
         <% if (user) { %>
         <li>
           <i class="bi bi-box-arrow-left" id="list-icons"></i>
-          <a href="/auth/logout">Leave</a>
+          <a href="/logout">Leave</a>
         </li>
         <% } else { %>
         <li>
           <i class="bi bi-box-arrow-in-right" id="list-icons"></i>
-          <a href="/auth/login">Login</a>
+          <a href="/login">Login</a>
         </li>
         <% } %>
         <li>
@@ -52,39 +52,41 @@
         <div>
           <img src="images/Home.svg" alt="" />
           <h1>
-            The Chat Platform For People Who Prefer Total Privacy within their
-            conversation.
+            Best messaging platform on the planet, Access from anywhere at any
+            time with any device of your choice
           </h1>
         </div>
-        <a href="/auth/login">Join +</a>
+        <a href="/login">Join +</a>
       </header>
       <hr />
-      <div class="div-one">
-        <img src="images/smile.svg" alt="positivity-pic" />
-        <h1>Engage Positively In Your Chats to Keep an Open Mind.</h1>
-      </div>
-      <hr />
-      <div class="div-two">
-        <img src="images/speech.svg" alt="speech-pic" />
-        <h1>The Freedom of Speech You Deserve Within Your Chats.</h1>
-      </div>
-      <hr />
-      <div class="div-three">
-        <img src="images/security.svg" alt="security" />
-        <h1>
-          Your Online Privacy Is Our Responsibility, Always feel Secured When
-          using Let's Chat.
-        </h1>
-      </div>
-      <hr />
-      <div class="div-four">
-        <img src="images/welcome.svg" alt="welcome-pic" />
-        <h1>
-          Come Join Us in This Wonderful Journey of Connecting With Your Closed
-          Ones.
-        </h1>
-        <a href="/auth/login" class="bounce-link">Join +</a>
-      </div>
+      <section>
+        <div class="div-one">
+          <img src="images/smile.svg" alt="positivity-pic" />
+          <h1>Engage Positively In Your Chats to Keep an Open Mind.</h1>
+        </div>
+        <hr />
+        <div class="div-two">
+          <img src="images/speech.svg" alt="speech-pic" />
+          <h1>The Freedom of Speech You Deserve Within Your Chats.</h1>
+        </div>
+        <hr />
+        <div class="div-three">
+          <img src="images/security.svg" alt="security" />
+          <h1>
+            Your Online Privacy Is Our Responsibility, Always feel Secured When
+            using Let's Chat.
+          </h1>
+        </div>
+        <hr />
+        <div class="div-four">
+          <img src="images/welcome.svg" alt="welcome-pic" />
+          <h1>
+            Come Join Us in This Wonderful Journey of Connecting With Your
+            Closed Ones.
+          </h1>
+          <a href="/login" class="bounce-link">Join +</a>
+        </div>
+      </section>
     </main>
     <hr />
     <footer>
@@ -98,7 +100,6 @@
       const ul = document.querySelector("ul");
       const darkBtn = document.getElementById("dark-btn");
       const body = document.querySelector("body");
-      const defaultMode = localStorage.setItem("dark-mode", "off");
 
       menu.addEventListener("click", () => {
         if (ul.classList.contains("hide")) {
@@ -107,16 +108,6 @@
         } else {
           ul.classList.remove("show");
           ul.classList.add("hide");
-        }
-      });
-
-      darkBtn.addEventListener("click", () => {
-        if (localStorage.getItem("dark-mode") === "off") {
-          localStorage.setItem("dark-mode", "on");
-          body.classList.add("body");
-        } else {
-          localStorage.setItem("dark-mode", "off");
-          body.classList.remove("body");
         }
       });
     </script>

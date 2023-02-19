@@ -28,8 +28,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /* Setup middlewares */
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 app.use("/profile", profileRoute);
+
+app.use((req, res, next) => {
+  console.log(req.method, req.path);
+  next();
+});
 
 /* View home page */
 app.get("/", (req, res) => {
