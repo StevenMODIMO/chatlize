@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/LC.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <title>New chat</title>
+  </head>
+  <body>
+    <!-- Start of Navigation bar-->
+    <nav>
+      <header>
+        <img src="images/Let’s Chat.svg" alt="app-logo" />
+        <div>
+          <i class="bi bi-list" id="menu-bar"></i>
+        </div>
+      </header>
+      <ul class="hide">
+        <li>
+          <i class="bi bi-house" id="list-icons"></i>
+          <a href="/">Home</a>
+        </li>
+        <% if (user) { %>
+        <li>
+          <i class="bi bi-box-arrow-left" id="list-icons"></i>
+          <a href="/logout">Leave</a>
+        </li>
+        <li class="user">
+          <h6><%=user.username.substring(0,5) + "..."%></h6>
+          <img src="<%=user.thumbnail%>" alt="user-pic" />
+        </li>
+        <% } else { %>
+        <li>
+          <i class="bi bi-box-arrow-in-right" id="list-icons"></i>
+          <a href="/login">Login</a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+    <!-- End of Navigation bar-->
+    <h1>Start a new chat</h1>
+    <input type="text" placeholder="Enter Message" />
+    <script>
+      const menu = document.getElementById("menu-bar");
+      const ul = document.querySelector("ul");
+      const darkBtn = document.getElementById("dark-btn");
+      const body = document.querySelector("body");
+
+      menu.addEventListener("click", () => {
+        if (ul.classList.contains("hide")) {
+          ul.classList.remove("hide");
+          ul.classList.add("show");
+        } else {
+          ul.classList.remove("show");
+          ul.classList.add("hide");
+        }
+      });
+    </script>
+  </body>
+</html>

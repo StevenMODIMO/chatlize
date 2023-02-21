@@ -3,7 +3,7 @@ const express = require("express");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const authRoutes = require("./routes/auth-routes");
-const profileRoute = require("./routes/profile-route");
+const chatRoute = require("./routes/chat-route");
 const passportConfiguration = require("./config/passport-setup");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT;
@@ -29,12 +29,8 @@ app.use(passport.session());
 
 /* Setup middlewares */
 app.use("/", authRoutes);
-app.use("/profile", profileRoute);
+app.use("/chat", chatRoute);
 
-app.use((req, res, next) => {
-  console.log(req.method, req.path);
-  next();
-});
 
 /* View home page */
 app.get("/", (req, res) => {

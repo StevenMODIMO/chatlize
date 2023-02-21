@@ -13,39 +13,43 @@
     <title>Login</title>
   </head>
   <body>
+    <!-- Start of Navigation bar-->
     <nav>
       <header>
         <img src="images/Let’s Chat.svg" alt="app-logo" />
-        <i class="bi bi-list" id="menu-bar"></i>
+        <div>
+          <i class="bi bi-list" id="menu-bar"></i>
+        </div>
       </header>
       <ul class="hide">
+        <li>
+          <i class="bi bi-house" id="list-icons"></i>
+          <a href="/">Home</a>
+        </li>
         <% if (user) { %>
         <li>
-          <i class="bi bi-box-arrow-left"></i>
-          <a href="/logout">Log out</a>
+          <i class="bi bi-box-arrow-left" id="list-icons"></i>
+          <a href="/logout">Leave</a>
+        </li>
+        <li class="user">
+          <h6><%=user.username.substring(0,5) + "..."%></h6>
+          <img src="<%=user.thumbnail%>" alt="user-pic" />
         </li>
         <% } else { %>
         <li>
-          <i class="bi bi-box-arrow-in-right"></i>
-          <a href="login">Login</a>
+          <i class="bi bi-box-arrow-in-right" id="list-icons"></i>
+          <a href="/login">Login</a>
         </li>
         <% } %>
-        <li>
-          <i class="bi bi-house"></i>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <i class="bi bi-person-circle"></i>
-          <a href="/profile">User</a>
-        </li>
       </ul>
     </nav>
+    <!-- End of Navigation bar-->
 
     <div class="login-div">
       <a href="/google"><i class="bi bi-google"></i> Continue With Google</a>
+      <a href="/facebook"><i class="bi bi-facebook"></i> Continue With Facebook</a>
+      <a href="/github"><i class="bi bi-github"></i> Continue With Github</a>
       <a href="#"><i class="bi bi-twitter"></i> Continue With Twitter</a>
-      <a href="#"><i class="bi bi-github"></i> Continue With Github</a>
-      <a href="#"><i class="bi bi-facebook"></i> Continue With Facebook</a>
     </div>
 
     <script>

@@ -22,10 +22,18 @@
         </div>
       </header>
       <ul class="hide">
+        <li>
+          <i class="bi bi-house" id="list-icons"></i>
+          <a href="/">Home</a>
+        </li>
         <% if (user) { %>
         <li>
           <i class="bi bi-box-arrow-left" id="list-icons"></i>
           <a href="/logout">Leave</a>
+        </li>
+        <li class="user">
+          <h6><%=user.username.substring(0,5) + "..."%></h6>
+          <img src="<%=user.thumbnail%>" alt="user-pic" />
         </li>
         <% } else { %>
         <li>
@@ -33,14 +41,6 @@
           <a href="/login">Login</a>
         </li>
         <% } %>
-        <li>
-          <i class="bi bi-house" id="list-icons"></i>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <i class="bi bi-person-circle" id="list-icons"></i>
-          <a href="/profile">User</a>
-        </li>
       </ul>
     </nav>
     <!-- End of Navigation bar-->
@@ -56,7 +56,11 @@
             time with any device of your choice
           </h1>
         </div>
+        <% if (user) { %>
+        <a href="/chat" class="bounce">Chat ?</a>
+        <% } else { %>
         <a href="/login">Join +</a>
+        <% } %>
       </header>
       <hr />
       <section>
