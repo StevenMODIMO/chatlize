@@ -61,8 +61,23 @@ passport.use(
       callbackURL: "/facebook/redirect",
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
-      console.log("Callback function fired...");
+      User.findOne({ googleID: profile.id }).then((existingUser) => {
+        // if user exists
+        if (existingUser) {
+          done(null, existingUser);
+        } else {
+          // if user doesn't exist
+          new User({
+            username: profile.displayName,
+            googleID: profile.id,
+            thumbnail: profile._json.picture,
+          })
+            .save()
+            .then((newUser) => {
+              done(null, newUser);
+            });
+        }
+      });
     }
   )
 );
@@ -96,4 +111,4 @@ passport.use(
     }
   )
 );
-/* END OF GOOGLE STRATEGY */
+/* END OF GITHUB STRATEGY */

@@ -10,6 +10,10 @@ const PORT = process.env.PORT;
 
 const app = express();
 
+const http = require('http').createServer(app)
+const socket = require('socket.io')(http)
+
+
 /* set view engine */
 app.set("view engine", "ejs");
 
