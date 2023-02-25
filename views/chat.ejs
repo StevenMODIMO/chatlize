@@ -45,12 +45,36 @@
     </nav>
     <!-- End of Navigation bar-->
     <h1>Start a new chat</h1>
-    <input type="text" placeholder="Enter Message" />
+    <div id="messages"></div>
+    <form id="form">
+      <input type="text" placeholder="Enter Message" id="input" />
+      <button>Send</button>
+    </form>
+    <script src="socket.io/socket.io.js"></script>
     <script>
+      const socket = io();
       const menu = document.getElementById("menu-bar");
       const ul = document.querySelector("ul");
       const darkBtn = document.getElementById("dark-btn");
       const body = document.querySelector("body");
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+      const messages = document.getElementById("messages")
+
+      /* Handle Chat Functionality here*/
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit("msg", input.value);
+          input.value = "";
+        }
+      });
+
+      socket.on("message", (msg) => {
+        const item = document.createElement('li')
+        item.textContent = msg
+        messages.appendChild(item)
+      })
 
       menu.addEventListener("click", () => {
         if (ul.classList.contains("hide")) {

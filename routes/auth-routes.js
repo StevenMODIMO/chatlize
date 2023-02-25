@@ -49,9 +49,5 @@ router.get("/github/redirect", passport.authenticate("github"), (req, res) => {
   res.redirect("/");
 });
 
-/* Authenticate with Twitter */
-router.get("/twitter", (req, res) => {
-  res.send("Twitter Login");
-});
 
 module.exports = router;

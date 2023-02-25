@@ -1,7 +1,6 @@
 require("dotenv").config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
-const TwitterStrategy = require("passport-twitter");
 const FaceBookStrategy = require("passport-facebook");
 const GithubStrategy2 = require("passport-github2");
 const User = require("../model/user-model");
@@ -48,9 +47,6 @@ passport.use(
 );
 /* END OF GOOGLE STRATEGY */
 
-/* START OF TWITTER STRATEGY */
-
-/* END OF TWITTER STRATEGY */
 
 /* START OF FACEBOOK STRATEGY */
 passport.use(
