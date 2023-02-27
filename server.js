@@ -12,14 +12,49 @@ const app = express();
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer);
 
+const sessionMiddleware = cookieSession({
+  maxAge: 24 * 60 * 60 * 5000,
+  keys: [process.env.COOKIE_KEY],
+});
+
+// convert a connect middleware to a Socket.IO middleware
+const wrap = (middleware) => (socket, next) =>
+  middleware(socket.request, {}, next);
+
+io.use(wrap(sessionMiddleware));
+io.use(wrap(passport.initialize()));
+io.use(wrap(passport.session()));
+
+io.use((socket, next) => {
+  if (socket.request.user) {
+    next();
+  } else {
+    next(new Error("unauthorized"));
+  }
+});
+
+// Handle Connections..
 io.on("connection", (socket) => {
   console.log("User connected");
+  const user = socket.request.user;
+  console.log(user);
 
-  socket.on("msg", (msg) => {
-    console.log("message", msg);
-    io.emit("message", msg)
+  // Listen for clients joining rooms
+  socket.on("join_room", (room) => {
+    socket.join(room);
+    console.log(socket.request.user.username, "Joined room: ", room);
+    socket.currentRoom = room;
   });
 
+  // Listen to messages from the client
+  socket.on("message", (msg) => {
+    console.log(socket.request.user.username, "Sent message: ", msg);
+    const username = socket.request.user.username;
+    const thumbnail = socket.request.user.thumbnail;
+    io.to(socket.currentRoom).emit("response", msg, thumbnail);
+  });
+
+  // Handle disconnections..
   socket.on("disconnect", () => {
     console.log("Disconnected");
   });
