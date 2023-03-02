@@ -45,59 +45,8 @@
     </nav>
     <!-- End of Navigation bar-->
 
-    <!-- Start of Chat Elements -->
-    <header>
-      <h2>Chat Rooms:</h2>
-      <form id="room-form">
-        <input type="text" name="room" id="room" autocomplete="off" />
-        <button>Create / Join Room</button>
-      </form>
-    </header>
-    <main>
-      <div id="rooms"></div>
-    </main>
-    <!-- End of Chat Elements -->
     <script src="socket.io/socket.io.js"></script>
-    <script>
-      const socket = io();
-      const menu = document.getElementById("menu-bar");
-      const ul = document.querySelector("ul");
-      const roomForm = document.getElementById("room-form");
-      const roomInput = document.getElementById("room");
-      const rooms = document.getElementById("rooms");
-
-      roomForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch("/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            roomName: roomInput.value,
-          }),
-        })
-          .then((res) => res.json)
-          .then((data) => console.log(data))
-          .catch((error) => console.log(error));
-        roomInput.value = "";
-      });
-
-        
-          .then((res) => res.json())
-          .then((data) => console.log(data))
-          .catch((error) => console.log(error));
-      
-
-      menu.addEventListener("click", () => {
-        if (ul.classList.contains("hide")) {
-          ul.classList.remove("hide");
-          ul.classList.add("show");
-        } else {
-          ul.classList.remove("show");
-          ul.classList.add("hide");
-        }
-      });
-    </script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/chat.js"></script>
   </body>
 </html>
