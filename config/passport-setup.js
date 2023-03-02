@@ -85,7 +85,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      callbackURL: "/github/redirect",
+      callbackURL: "https://chat-fn4d.onrender.com/github/redirect",
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ githubID: profile.id }).then((existingUser) => {
