@@ -36,8 +36,6 @@ io.use((socket, next) => {
 // Handle Connections..
 io.on("connection", (socket) => {
   console.log("User connected");
-  const user = socket.request.user;
-  console.log(user);
 
   // Listen for clients joining rooms
   socket.on("join_room", (room) => {

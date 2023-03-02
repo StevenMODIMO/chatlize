@@ -44,73 +44,50 @@
       </ul>
     </nav>
     <!-- End of Navigation bar-->
-    <h1>Start a new chat</h1>
-    <!-- Room Form -->
-    <form id="room-form">
-      <input
-        type="text"
-        placeholder="Enter Room Name"
-        id="room-input"
-        autocomplete="off"
-      />
-      <button>Join Room</button>
-    </form>
 
-    <div id="messages"></div>
-    <!-- Chat Form -->
-    <form id="form">
-      <input
-        type="text"
-        placeholder="Enter Message"
-        id="input"
-        autocomplete="off"
-      />
-      <button>Send</button>
-    </form>
+    <!-- Start of Chat Elements -->
+    <header>
+      <h2>Chat Rooms:</h2>
+      <form id="room-form">
+        <input type="text" name="room" id="room" autocomplete="off" />
+        <button>Create / Join Room</button>
+      </form>
+    </header>
+    <main>
+      <div id="rooms"></div>
+    </main>
+    <!-- End of Chat Elements -->
     <script src="socket.io/socket.io.js"></script>
     <script>
       const socket = io();
       const menu = document.getElementById("menu-bar");
       const ul = document.querySelector("ul");
-      const darkBtn = document.getElementById("dark-btn");
-      const body = document.querySelector("body");
-      const form = document.getElementById("form");
-      const input = document.getElementById("input");
-      const messages = document.getElementById("messages");
       const roomForm = document.getElementById("room-form");
-      const roomInput = document.getElementById("room-input");
+      const roomInput = document.getElementById("room");
+      const rooms = document.getElementById("rooms");
 
-      form.style.display = "none";
-
-      /* Handle Room Functionality */
       roomForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        if (roomInput.value) {
-          socket.emit("join_room", roomInput.value);
-          roomInput.value = "";
-          form.style.display = "block";
-          roomForm.style.display = "none";
-        }
+        fetch("/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            roomName: roomInput.value,
+          }),
+        })
+          .then((res) => res.json)
+          .then((data) => console.log(data))
+          .catch((error) => console.log(error));
+        roomInput.value = "";
       });
 
-      /* Handle Chat Functionality here*/
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (input.value) {
-          socket.emit("message", input.value);
-          input.value = "";
-        }
-      });
-
-      socket.on("response", (msg, user, thumb) => {
-        const text = document.createElement("h3");
-        text.textContent = msg;
-        messages.appendChild(text);
-
-        const item = document.createElement("div");
-        item.textContent = user;
-        messages.appendChild(item);
-      });
+        
+          .then((res) => res.json())
+          .then((data) => console.log(data))
+          .catch((error) => console.log(error));
+      
 
       menu.addEventListener("click", () => {
         if (ul.classList.contains("hide")) {
