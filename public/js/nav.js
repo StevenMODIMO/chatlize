@@ -1,4 +1,3 @@
-console.log("served")
 const menu = document.getElementById("menu-bar");
       const ul = document.querySelector("ul");
       menu.addEventListener("click", () => {

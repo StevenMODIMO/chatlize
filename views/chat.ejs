@@ -44,6 +44,32 @@
       </ul>
     </nav>
     <!-- End of Navigation bar-->
+    <form id="room-form">
+      <input type="text" id="room-input" autocomplete="off" />
+      <button>Create</button>
+    </form>
+
+    <form id="join-form">
+      <input type="text" id="join-input" autocomplete="off" />
+      <button>Join</button>
+    </form>
+
+    <button id="retrieve">Retrieve Rooms</button>
+ 
+    <div id="rooms">
+      <h2>Your Rooms</h2>
+    </div>
+
+    <div id="invited">
+      <h2>Invited Rooms:</h2>
+    </div>
+
+    <form id="text">
+      <input type="text" id="msg" autocomplete="off">
+      <button>Send</button>
+    </form>
+
+    <div id="chats"></div>
 
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/nav.js"></script>
