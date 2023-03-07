@@ -33,28 +33,42 @@ function socketHandler(server) {
 
     // Listen for room connections
     socket.on("join-room", (room) => {
-      console.log("Current room is: ", room);
       socket.join(room);
       socket.currentRoom = room;
     });
 
     // listen for messages
     socket.on("message", (msg) => {
-      io.to(socket.currentRoom).emit("chat", msg);
-      console.log("Currnet: ", socket.currentRoom);
-      console.log(msg);
       const rname = socket.currentRoom;
       const sender = socket.request.user.username;
       const thumbnail = socket.request.user.thumbnail;
+      const date = new Date()
+      const day = date.getDay()
+      const hours = date.getHours()
+      const mins = date.getMinutes()
+      const getDayName = (day) => {
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        return daysOfWeek[day];
+      }
+      const currentDate = getDayName(day) + "-" + hours + ":" + mins
+      io.to(socket.currentRoom).emit("chat", {
+        msg: msg,
+        sender: sender,
+        thumbnail: thumbnail,
+        date: currentDate
+      });
       Chat.findOneAndUpdate(
         { room_name: rname },
         {
           $push: {
-            room_chats: [{
-              sender: sender,
-              thumbnail: thumbnail,
-              message: msg,
-            }],
+            room_chats: [
+              {
+                sender: sender,
+                thumbnail: thumbnail,
+                message: msg,
+                date: currentDate
+              },
+            ],
           },
         },
         { new: true },

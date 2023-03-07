@@ -10,7 +10,8 @@ const roomSchema = new Schema({
     {
       sender: String,
       thumbnail: String,
-      message: String
+      message: String,
+      date: String
     }
   ]
 }, { timestamps: true});

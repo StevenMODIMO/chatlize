@@ -93,6 +93,7 @@ router.get("/user-rooms", authCheck, (req, res) => {
 router.get("/joined-rooms", authCheck, (req, res) => {
   const user = req.user.username
   const json_rooms = []
+  const chats = []
   Room.find({ room_creator: { $ne: user }}, (err, docs) => {
     docs.map(room => {
       const mems = room.room_members
@@ -101,8 +102,9 @@ router.get("/joined-rooms", authCheck, (req, res) => {
           json_rooms.push(room.room_name)
         }
       }
+      chats.push(room.room_chats)
     })
-   res.status(200).json(json_rooms)
+   res.status(200).json({json_rooms, chats})
   })
 })
 
