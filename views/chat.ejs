@@ -44,34 +44,57 @@
       </ul>
     </nav>
     <!-- End of Navigation bar-->
-    <form id="room-form">
-      <input type="text" id="room-input" autocomplete="off" />
-      <button>Create</button>
-    </form>
 
-    <form id="join-form">
-      <input type="text" id="join-input" autocomplete="off" />
-      <button>Join</button>
-    </form>
-
-   
-    <div id="rooms">
-      <h2>Your Rooms</h2>
+    <!-- Start of Main Chat Page -->
+    <div class="bars">
+      <div class="bar-one">
+        <i class="bi bi-list-task"></i>
+      </div>
+      <div class="bar-two">
+        <i class="bi bi-people"></i>
+      </div>
     </div>
+    <main class="main">
+      <section class="forms">
+        <form id="room-form" class="room-form">
+          <input type="text" id="room-input" class="room-input" autocomplete="off" />
+          <button>Create</button>
+        </form>
+        <div class="rooms">
+          <h2>Your Rooms</h2>
+          <div id="rooms">
+          </div>
+        </div>
+        <form id="join-form" class="join-form">
+          <input type="text" id="join-input" autocomplete="off" />
+          <button>Join</button>
+        </form>
+        <div id="invited" class="invited">
+          <h2>Invited Rooms:</h2>
+        </div>
+      </section>
+      <section class="chats">
+        <form id="text">
+          <input type="text" id="msg" autocomplete="off">
+          <button>Send</button>
+        </form>
+        <div id="chats">
+          <h2>Room Chats: </h2>
+        </div>
+      </section>
+      <section class="room-users">
+        <div class="users">
+          <h2>Room Users:</h2>
+        </div>
+      </section>
+    </main>
 
-    <div id="invited">
-      <h2>Invited Rooms:</h2>
-    </div>
+    <!-- End of Main Chat Page-->
 
-    <form id="text">
-      <input type="text" id="msg" autocomplete="off">
-      <button>Send</button>
-    </form>
-
-    <div id="chats"></div>
-
+    <!-- External Script Files Links Here -->
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/nav.js"></script>
     <script src="/js/chat.js"></script>
+    <!-- External Script Files Links Here -->
   </body>
 </html>

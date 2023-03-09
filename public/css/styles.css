@@ -519,13 +519,156 @@ footer {
         font-size: 25px;
     }
 }
-
+ 
 /* End of Login Page Styles */
 
 
 /* Start of Chat Styles */
 
-/* create and join form styles*/
+.main {
+    width: 80vw;
+    display: flex;
+}
+
+.forms {
+    position: absolute;
+    top: 80px;
+    left: -500px;
+    transition: all 0.5s;
+    width: 100vw;
+    background-color: rgba(12, 11, 11, 0.856);
+    border-radius: 5px;
+    height: 80vh;
+}
+
+.show-forms {
+    width: 120w;
+    background-color: rgba(12, 11, 11, 0.856);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    transition: all 0.5s;
+    border-radius: 5px;
+    height: 80vh;
+}
+
+.bars {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar-one, .bar-two {
+    font-size: 30px;
+}
+
+.room-form {
+    margin: 10px;
+}
+
+.room-form input {
+    padding: 5px;
+    border: 2px solid rgb(221, 158, 42);
+    border-radius: 5px;
+    background-color: black;
+    outline: none;
+    color: orange;
+}
+
+.room-form button {
+    padding: 5px;
+    border: 2px solid rgb(221, 158, 42);
+    border-radius: 5px;
+    background-color: black;
+    color: black;
+    margin: 5px 0 0 0;
+    color: orange;
+}
+
+.rooms h2 {
+    margin: 0 0 0 10px;
+}
+
+.join-form {
+    margin: 10px;
+}
+
+.join-form input {
+    padding: 5px;
+    border: 2px solid rgb(221, 158, 42);
+    border-radius: 5px;
+    background-color: black;
+    outline: none;
+    color: orange;
+}
+
+.join-form button {
+    padding: 5px;
+    border: 2px solid rgb(221, 158, 42);
+    border-radius: 5px;
+    background-color: black;
+    color: black;
+    margin: 5px 0 0 0;
+    color: orange;
+}
+
+.rooms h1 {
+    margin: 0 0 0 10px;
+}
+
+.invited {
+    margin: 0 0 0 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.del-id {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.title {
+    width: 50%;
+    font-size: 20px;
+}
 
 
-/* End of \Chat Styles */
+@media screen and (min-width: 768px) {
+    .forms {
+        top: 100px;
+        position: absolute;
+        left: -900px;
+    }
+
+    .show-forms {
+        top: 100px;
+        width: 100vw;
+    }
+
+    .bar-one, .bar-two {
+        font-size: 40px;
+    }
+
+    .room-form input, .join-form input {
+        width: 50vw;
+        padding: 10px;
+    }
+
+    .room-form button, .join-form button {
+        padding: 10px;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    
+}
+
+/* End of Chat Styles */
