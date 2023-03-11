@@ -47,10 +47,6 @@ socketHandler(httpServer);
 
 mongoose.connect(process.env.MONGO_URI, () => {
   httpServer.listen(PORT, () => {
-    console.log("+++++++++++++++++++++++++++++".red)
-    console.log("[OK] SERVER IS STARTED AT: ".yellow)
     console.log(`[OK] http://localhost:${PORT}`.green);
-    console.log("[OK] VISIT THE ADDRESS ABOVE".yellow)
-    console.log("=============================".blue)
   });
 });

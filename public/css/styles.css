@@ -1,159 +1,156 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 
-
 body {
-    background-color: black;
-    color: rgb(221, 158, 42);
+  background-color: black;
+  color: rgb(221, 158, 42);
 }
 
 a {
-    text-decoration: none;
-    color: orange;
+  text-decoration: none;
+  color: orange;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
-
 
 /*Start of Nav Bar Styles Here*/
 
 nav header {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 nav header img {
-    width: 200px;
+  width: 200px;
 }
 
 nav header i {
-    margin: 5px 0 0 0;
-    font-size: 30px;
+  margin: 5px 0 0 0;
+  font-size: 30px;
 }
 
 .hide {
-    position: absolute;
-    top: 40px;
-    font-size: 30px;
-    background-color: rgba(12, 11, 11, 0.856);
-    width: 90vw;
-    margin: 20px 0 0 -900px;
-    border-radius: 10px;
-    transition: all 0.5s;
-    transition-duration: 0.5s;
+  position: absolute;
+  top: 40px;
+  font-size: 30px;
+  background-color: rgba(12, 11, 11, 0.856);
+  width: 90vw;
+  margin: 20px 0 0 -900px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  transition-duration: 0.5s;
 }
 
 #list-icons {
-    color: orange;
+  color: orange;
 }
 
-.show {
-    position: absolute;
-    top: 40px;
-    font-size: 30px;
-    background-color: rgba(12, 11, 11, 0.856);
-    margin: 20px;
-    border-radius: 10px;
-    transition: all 0.5s;
-    transition-duration: 0.5s;
+.show {  
+  position: absolute;
+  top: 40px;
+  font-size: 30px;
+  background-color: rgba(12, 11, 11, 0.856);
+  margin: 10px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  transition-duration: 0.5s;
 }
 
 .show li {
-    margin: 50px;
+  margin: 50px;
 }
 
 .hide li {
-    margin: 50px;
+  margin: 50px;
 }
 
 .show li:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 hr {
-    border: none;
-    height: 2px;
-    margin: auto;
-    background-color: orange;
-    margin: 20px 0;
+  border: none;
+  height: 2px;
+  margin: auto;
+  background-color: orange;
+  margin: 20px 0;
 }
 
 .user {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .user h6 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .user img {
-    width: 30%;
-    border-radius: 50%;
+  width: 30%;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 768px) {
+  nav {
+    margin: 10px 0 0 0;
+    width: 100vw;
+    display: flex;
+  }
 
-    nav {
-        margin: 10px 0 0 0;
-        width: 100vw;
-        display: flex;
-    }
+  .user {
+    width: 12%;
+  }
 
-    .user {
-       width: 12%;
-    }
+  .user img {
+    width: 150%;
+  }
 
-    .user img {
-        width: 150%;
-    }
+  .user h6 {
+    font-size: 20px;
+  }
 
-    .user h6 {
-        font-size: 20px;
-    }
+  nav header .bi-list {
+    display: none;
+  }
 
-    nav header .bi-list {
-        display: none;
-    }
+  .hide {
+    position: relative;
+    top: -50px;
+    margin: 0;
+    font-size: 20px;
+    width: 0;
+    height: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+  }
 
-    .hide {
-        position: relative;
-        top: -50px;
-        margin: 0;
-        font-size: 20px;
-        width: 0;
-        height: 0;
-        display: grid;
-        grid-template-columns: repeat(3, 150px);
-    }
+  li {
+    display: flex;
+    gap: 10px;
+    transition: all 0.5s;
+  }
 
-    li {
-        display: flex;
-        gap: 10px;
-        transition: all 0.5s;
-    }
-
-    li:hover {
-        transform: scale(1.1);
-        transition: all 0.5s;
-    }
+  li:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
 }
 
 @media screen and (min-width: 992px) {
-    nav {
-        margin: 10px 0 0 0;
-        width: 60vw;
-        display: flex;
-        justify-content: space-between;
-    }
+  nav {
+    margin: 10px 0 0 0;
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 /*End of Nav Bar Styles Here*/
@@ -161,266 +158,264 @@ hr {
 /*Start of Home page Styles*/
 
 main header {
-    margin: 50px 20px 20px 20px;
-    height: 90vh;
+  margin: 50px 20px 20px 20px;
+  height: 90vh;
 }
 
 main header h1 {
-    margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 main header a {
-    margin: 0 0 0 100px;
-    border: 2px solid orange;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: 500;
-    font-size: 20px;
-    background-color: black;
-    transition: all 0.5s;
+  margin: 0 0 0 100px;
+  border: 2px solid orange;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: black;
+  transition: all 0.5s;
 }
 
 main header a:hover {
-    transition: all 0.5s;
-    background-color: orange;
-    color: black;
+  transition: all 0.5s;
+  background-color: orange;
+  color: black;
 }
 
 main h1 {
-    text-align: center;
-    font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
 main img {
-    width: 90%;
+  width: 90%;
 }
 
 main .div-one {
-    margin: 20px;
+  margin: 20px;
 }
 
 main .div-two {
-    margin: 20px;
+  margin: 20px;
 }
 
 main .div-three {
-    margin: 20px;
+  margin: 20px;
 }
 
 main .div-four {
-    margin: 30px;
-    padding: 5px;
+  margin: 30px;
+  padding: 5px;
 }
 
 main .div-four h1 {
-    margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
-
 main .div-four a {
-    margin: 0 0 0 100px;
-    border: 2px solid orange;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: 500;
-    font-size: 20px;
-    background-color: black;
+  margin: 0 0 0 100px;
+  border: 2px solid orange;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: black;
 }
 
 .bounce {
-    position: relative;
-    animation: bounce 1s infinite;
+  position: relative;
+  animation: bounce 1s infinite;
 }
 
 .bounce:hover {
-    animation-name: none;
-    transition: all 0.5s;
+  animation-name: none;
+  transition: all 0.5s;
 }
 
 @keyframes bounce {
-    0%, 100% {
-      top: 0;
-    }
-    50% {
-      top: 20px;
-    }
+  0%,
+  100% {
+    top: 0;
   }
+  50% {
+    top: 20px;
+  }
+}
 
 @media screen and (min-width: 768px) {
-    main header {
-        display: flex;
-        flex-direction: column;
-    }
+  main header {
+    display: flex;
+    flex-direction: column;
+  }
 
-    main header h2 {
-        font-size: 40px;
-    }
+  main header h2 {
+    font-size: 40px;
+  }
 
-    main header div {
-        display: flex;
-        margin: 40px 0 0 0;
-    }
+  main header div {
+    display: flex;
+    margin: 40px 0 0 0;
+  }
 
-    main header div h1 {
-        margin: 70px 0 0 0;
-    }
+  main header div h1 {
+    margin: 70px 0 0 0;
+  }
 
-    main header img {
-        width: 60%;
-        margin: 10px;
-    }
+  main header img {
+    width: 60%;
+    margin: 10px;
+  }
 
-    main header a {
-        margin: auto;
-    }
+  main header a {
+    margin: auto;
+  }
 
-    .div-one {
-        margin: 40px 0 40px 0;
-        display: flex;
-        flex-direction: row-reverse;
-    }
+  .div-one {
+    margin: 40px 0 40px 0;
+    display: flex;
+    flex-direction: row-reverse;
+  }
 
-    .div-one img {
-        width: 50%;
-    }
+  .div-one img {
+    width: 50%;
+  }
 
-    .div-one h1 {
-        font-size: 30px;
-    }
+  .div-one h1 {
+    font-size: 30px;
+  }
 
-    .div-two {
-        margin: 40px 0 40px 0;
-        display: flex;
-    }
+  .div-two {
+    margin: 40px 0 40px 0;
+    display: flex;
+  }
 
-    .div-two img {
-        width: 50%;
-    }
+  .div-two img {
+    width: 50%;
+  }
 
-    .div-two h1 {
-        font-size: 30px;
-    }
+  .div-two h1 {
+    font-size: 30px;
+  }
 
-    .div-three {
-        margin: 50px;
-        display: flex;
-        flex-direction: row-reverse;
-    }
+  .div-three {
+    margin: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
 
-    .div-three h1 {
-        font-size: 25px;
-    }
+  .div-three h1 {
+    font-size: 25px;
+  }
 
-    .div-three img {
-        width: 50%;
-    }
+  .div-three img {
+    width: 50%;
+  }
 
-    .div-four h1 {
-        font-size: 25px;
-    }
+  .div-four h1 {
+    font-size: 25px;
+  }
 }
 
 @media screen and (min-width: 992px) {
+  main {
+    margin: 0 0 0 50px;
+  }
 
-    main {
-        margin: 0 0 0 50px;
-    }
+  main header h2 {
+    text-decoration: underline;
+  }
 
-    main header h2 {
-        text-decoration: underline;
-    }
+  main header div img {
+    width: 40%;
+    margin: 0 0 0 50px;
+  }
 
-    main header div img {
-        width: 40%;
-        margin: 0 0 0 50px;
-    }
+  main header div {
+    margin: 80px 0 0 0;
+  }
 
-    main header div {
-        margin: 80px 0 0 0;
-    }
+  main header div h1 {
+    width: 60%;
+    margin: 50px;
+    height: 200px;
+    box-shadow: inset 0.5px 0.5px 1px orange;
+    font-size: 40px;
+  }
 
-    main header div h1 {
-        width: 60%;
-        margin: 50px;
-        height: 200px;
-        box-shadow: inset 0.5px 0.5px 1px orange;
-        font-size: 40px;
-    }
+  hr {
+    display: none;
+  }
 
-    hr {
-        display: none;
-    }
+  section {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-gap: 20px;
+    justify-content: center;
+  }
 
-    section {
-        width: 80vw;
-        display: grid;
-        grid-template-columns: repeat(4, 250px);
-        grid-gap: 20px;
-        justify-content: center;
-    }
+  .div-one {
+    width: 100%;
+    border: 2px solid orange;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 2px 2px 3px orange;
+  }
 
-    .div-one {
-        width: 100%;
-        border: 2px solid orange;
-        flex-direction: column;
-        gap: 30px;
-        box-shadow: 2px 2px 3px orange;
-    }
+  .div-one img {
+    margin: 30px 0 0 90px;
+  }
 
-    .div-one img {
-        margin: 30px 0 0 90px;
-    }
+  .div-two {
+    width: 100%;
+    border: 2px solid orange;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 2px 2px 3px orange;
+  }
 
+  .div-two img {
+    margin: 30px 0 0 90px;
+  }
 
-    .div-two {
-        width: 100%;
-        border: 2px solid orange;
-        flex-direction: column;
-        gap: 30px;
-        box-shadow: 2px 2px 3px orange;
-    }
+  .div-three {
+    width: 100%;
+    border: 2px solid orange;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 2px 2px 3px orange;
+  }
 
-    .div-two img {
-        margin: 30px 0 0 90px;
-    }
+  .div-three img {
+    margin: 50px 0 0 50px;
+    width: 70%;
+  }
 
-    .div-three {
-        width: 100%;
-        border: 2px solid orange;
-        flex-direction: column;
-        gap: 30px;
-        box-shadow: 2px 2px 3px orange;
-    }
+  .div-four {
+    width: 100%;
+    border: 2px solid orange;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 2px 2px 3px orange;
+  }
 
-    .div-three img {
-        margin: 50px 0 0 50px;
-        width: 70%;
-    }
+  .div-four img {
+    margin: 30px 0 0 90px;
+  }
 
-    .div-four {
-        width: 100%;
-        border: 2px solid orange;
-        flex-direction: column;
-        gap: 30px;
-        box-shadow: 2px 2px 3px orange;
-    }
-
-    .div-four img {
-        margin: 30px 0 0 90px;
-    }
-
-    .div-four a {
-        display: none;
-    }
+  .div-four a {
+    display: none;
+  }
 }
 
 /*End of Home page Styles*/
 
 /* Start Of Footer styles */
 footer {
-    margin: 30px;
-    text-align: center;
-    font-size: 20px;
+  margin: 30px;
+  text-align: center;
+  font-size: 20px;
 }
 
 /* End Of Footer styles */
@@ -428,40 +423,261 @@ footer {
 /* Start of Login Page Styles */
 
 .login-div {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-div a {
-    width: 90%;
-    border: 2px solid orange;
-    padding: 5px;
-    font-size: 15px;
-    margin: 10px;
-    transition: all 0.5s;
+  width: 90%;
+  border: 2px solid orange;
+  padding: 5px;
+  font-size: 15px;
+  margin: 10px;
+  transition: all 0.5s;
 }
 
 .login-div a:hover {
-    background-color: orange;
-    color: black;
-    transition: all 0.5s;
+  background-color: orange;
+  color: black;
+  transition: all 0.5s;
 }
 
 @media screen and (min-width: 768px) {
-    .login-div a {
-        width: 50%;
-        font-size: 20px;
-    }
+  .login-div a {
+    width: 50%;
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 992px) {
-    .login-div a {
-        width: 30%;
-        font-size: 25px;
-    }
+  .login-div a {
+    width: 30%;
+    font-size: 25px;
+  }
 }
- 
+
 /* End of Login Page Styles */
+
+/* Start of Main Chat Page Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bars i {
+  font-size: 30px;
+}
+
+.rooms {
+  width: 100vw;
+  height: 80vh;
+  position: absolute;
+  left: -400px;
+  transition: all 0.5s;
+  overflow-y: scroll;
+}
+
+.show-rooms {
+  left: 0;
+  transition: all 0.5s;
+  background-color: rgba(12, 11, 11, 0.856);
+}
+
+.room-form {
+  display: flex;
+  gap: 10px;
+  background-color: rgba(12, 11, 11, 0.856);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.room-form input {
+  padding: 5px;
+  width: 80%;
+  background-color: black;
+  color: rgb(221, 158, 42);
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid rgb(221, 158, 42);
+}
+
+.room-form button {
+  padding: 5px;
+  background-color: black;
+  color: rgb(221, 158, 42);
+  border: none;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.join-form {
+  display: flex;
+  gap: 10px;
+  background-color: rgba(12, 11, 11, 0.856);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.join-form input {
+  padding: 5px;
+  width: 80%;
+  background-color: black;
+  color: rgb(221, 158, 42);
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid rgb(221, 158, 42);
+}
+
+.join-form button {
+  padding: 5px;
+  background-color: black;
+  color: rgb(221, 158, 42);
+  border: none;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.room-users {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.users {
+  background-color: rgba(12, 11, 11, 0.856);
+  width: 100vw;
+  height: 80vh;
+  position: absolute;
+  right: -400px;
+  transition: all 0.5s;
+}
+
+.show-users {
+  right: 0;
+  transition: all 0.5s;
+}
+
+.users-panel {
+  position: relative;
+  overflow: visible;
+  transition: all 0.5s;
+}
+
+.user-rooms {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.container_one {
+  margin: 0 0 0 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.container_one h3 {
+  background-color: rgb(22, 17, 6);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.container_one h3:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.container_two {
+  display: flex;
+  gap: 10px;
+  background-color: rgb(22, 17, 6);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container_two span {
+  transition: all 0.5s;
+}
+
+.container_two span:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.avatar {
+  border: 1px solid rgb(221, 158, 42);
+  border-radius: 5px;
+  padding: 0 5px 0 5px;
+}
+
+.modal {
+  position: absolute;
+  background-color: rgb(22, 17, 6);
+  top: 40px;
+  right: 0;
+  padding: 10px;
+  font-size: 15px;
+  display: none;
+  border-radius: 5px;
+  margin: 0 5px 0 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal_con {
+  display: flex;
+  gap: 5px;
+}
+
+.join_container {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  font-size: 20px;
+  background-color: rgb(22, 17, 6);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.join_container h3 {
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.join_container h3:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.join_container span:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.join_container span {
+  transition: all 0.5s;
+}
+
+.exit {
+  background-color: rgba(12, 11, 11, 0.856);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* End of Main Chat Page Styles */

@@ -88,7 +88,11 @@
             Come Join Us in This Wonderful Journey of Connecting With Your
             Closed Ones.
           </h1>
-          <a href="/login" class="bounce-link">Join +</a>
+          <% if (user) { %>
+            <div></div>
+            <% } else { %>
+            <a href="/login">Join +</a>
+            <% } %>
         </div>
       </section>
     </main>

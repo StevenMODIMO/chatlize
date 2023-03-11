@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const roomSchema = new Schema({
+  room_avatar: String,
   room_name: String,
   room_creator: String,
   room_members: [String],

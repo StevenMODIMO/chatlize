@@ -49,5 +49,4 @@ router.get("/github/redirect", passport.authenticate("github"), (req, res) => {
   res.redirect("/");
 });
 
-
 module.exports = router;
