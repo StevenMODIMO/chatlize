@@ -52,7 +52,7 @@ nav header i {
   color: orange;
 }
 
-.show {  
+.show {
   position: absolute;
   top: 40px;
   font-size: 30px;
@@ -234,10 +234,12 @@ main .div-four a {
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     top: 0;
   }
+
   50% {
     top: 20px;
   }
@@ -680,4 +682,78 @@ footer {
   cursor: pointer;
 }
 
+.main {
+  left: -300px;
+}
+
+.main-show {
+  left: 0;
+}
+
+.user_info {
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+}
+
+.users img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.users h2 {
+  text-align: center;
+  margin: 5px;
+}
+
+.date {
+  margin: 0 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-details {
+  background-color: black;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.status {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: status 2s ease infinite;
+}
+
+.status-two {
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: status-two 2s ease infinite;
+}
+
+@keyframes status {
+  from {
+    background-color: red;
+  }
+
+  to {
+    background-color: rgb(243, 41, 41);
+  }
+}
+
+@keyframes status-two {
+  from {
+    background-color: green;
+  }
+
+  to {
+    background-color: rgb(126, 226, 44);
+  }
+}
+
 /* End of Main Chat Page Styles */
+/*rgb(126, 226, 44) */

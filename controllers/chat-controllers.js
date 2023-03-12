@@ -1,4 +1,5 @@
 const Room = require("../model/room-model");
+const mongoose = require("mongoose");
 
 const createNewRoom = (req, res) => {
   const roomName = req.body.roomName;
@@ -30,6 +31,9 @@ const createNewRoom = (req, res) => {
 const joinRoom = (req, res) => {
   const roomName = req.body.joinedRoom;
   const member = req.user.username;
+  if (!mongoose.Types.ObjectId.isValid(roomName)) {
+    res.status(400).json({ error: "Invalid room id" });
+  }
   Room.findOne({ _id: roomName }, (err, result) => {
     if (result) {
       const creator = result.room_creator;
@@ -42,15 +46,40 @@ const joinRoom = (req, res) => {
         }
       };
       if (creator == member) {
-        console.log("You created this room");
+        res.status(400).json({ error: "You created this room" });
       } else if (exists(members)) {
-        console.log("User exists");
+        res.status(400).json({ error: "User exists" });
       } else {
+        const date = new Date();
+        const day = date.getDay();
+        const dat = date.getDate();
+        const month = date.getMonth();
+        const year = date.getFullYear();
+        const getDayName = (day) => {
+          const daysOfWeek = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ];
+          return daysOfWeek[day];
+        };
+        const currentDate =
+          getDayName(day) + "-" + dat + "/" + month + "/" + year;
         Room.findOneAndUpdate(
           { _id: roomName },
           {
             $push: {
-              room_members: member,
+              room_members: [
+                {
+                  username: member,
+                  thumbnail: req.user.thumbnail,
+                  date: currentDate,
+                },
+              ],
             },
           },
           { new: true },
@@ -58,7 +87,7 @@ const joinRoom = (req, res) => {
             if (err) {
               console.log(err);
             } else {
-              res.status(200).json(result);
+              res.status(200).json({ msg: "Successfully joined" });
             }
           }
         );
@@ -80,8 +109,8 @@ const userRooms = (req, res) => {
 
 const joinedRooms = (req, res) => {
   const user = req.user.username;
-  Room.find({ room_members: { $in : [user]} }, (err, docs) => {
-    res.status(200).json(docs)
+  Room.find({ room_members: { $in: [user] } }, (err, docs) => {
+    res.status(200).json(docs);
   });
 };
 
@@ -91,25 +120,27 @@ const deleteRoom = (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.status(200).json("Deleted");
+      res.status(200).json({ msg: "You deleted a room" });
     }
   });
 };
 
 const leaveRoom = (req, res) => {
   const { id } = req.params;
-  const user = req.user.username
-  Room.findOneAndUpdate({ id }, {
-    $pull: { room_members: user }
-  },
-  { new: true},
-  (err, result) => {
-    if(err) {
-      console.log(err)
-    } else {
-      res.json(result)
+  const user = req.user.username;
+  Room.findOneAndUpdate(
+    { id },
+    {
+      $pull: { room_members: user },
+    },
+    { new: true },
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json({ msg: `You left a room` });
+      }
     }
-  }
   );
 };
 

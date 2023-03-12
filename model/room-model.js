@@ -6,7 +6,11 @@ const roomSchema = new Schema({
   room_avatar: String,
   room_name: String,
   room_creator: String,
-  room_members: [String],
+  room_members: [{
+    username: String,
+    thumbnail: String,
+    date: String
+  }],
   room_chats: [
     {
       sender: String,
